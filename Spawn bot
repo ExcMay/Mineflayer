@@ -7,7 +7,7 @@ const bot = mineflayer.createBot({
 });
 
 bot.on('spawn', function(){
-    bot.chat("I'm alive")
+    bot.chat("I'm alive!!!")
 })
 
 bot.on('chat', function(username, message){
