@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mineflayer</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/chat.js"></script>
+</head>
+<body>
+    <h2>Send Message in Chat</h2>
+    <input type="text" id="message" placeholder="Введите сообщение">        
+    <button onclick="sendMessage()">Отправить</button>
+
+    <script>
+        const socket = io();
+
+        function sendMessage() {
+            const input = document.getElementById('message');
+            const message = input.value.trim();
+            if (message) {
+                socket.emit('chatMessage', message);
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
