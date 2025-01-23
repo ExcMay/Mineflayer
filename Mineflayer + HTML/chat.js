@@ -18,7 +18,6 @@ const bot = mineflayer.createBot({
 
 
 
-// Раздаём HTML и JS клиенту
 app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
@@ -27,6 +26,7 @@ io.on('connection', (socket) => {
         bot.chat(msg);
     });
 });
+
 
 
 /*
